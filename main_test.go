@@ -42,10 +42,10 @@ func TestBlockCount(t *testing.T) {
 			break
 		}
 
-		if preBlock != nil && (int64(block.Header.TimeStamp)-int64(preBlock.Header.TimeStamp) > 20*60) {
+		if preBlock != nil && (int64(block.Header.TimeStamp)-int64(preBlock.Header.TimeStamp) > 2*60*60) {
 			count++
 		}
 		preBlock = block
 	}
-	fmt.Println("count of block produced after 20 minutes: ", count)
+	fmt.Println("count of block produced after 2 hours: ", count)
 }
